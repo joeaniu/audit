@@ -64,7 +64,7 @@ public class AuditTest {
                 String userId = "zhangsan111";
                 userContext.setUserId(userId);
                
-                //  let other thread to run
+                //  let other thread run first.
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {

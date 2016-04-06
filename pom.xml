@@ -4,11 +4,20 @@
 	<groupId>net.thiki</groupId>
 	<artifactId>audit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<parent>
-		<groupId>com.hoolai</groupId>
-		<artifactId>env-parent</artifactId>
-		<version>1.7</version>
-	</parent>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>	
 	<dependencies>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -36,7 +45,6 @@
 			<groupId>net.jodah</groupId>
 			<artifactId>concurrentunit</artifactId>
 			<version>0.4.3</version>
-			<name>ConcurrentUnit</name>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
