@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.*;
+import static org.junit.Assert.*;
 
 public class AuditTest {
 
@@ -62,8 +63,14 @@ public class AuditTest {
                 // 假设是用户zhangsan111
                 String userId = "zhangsan111";
                 userContext.setUserId(userId);
-                
-                
+               
+                //  let other thread to run
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    fail();
+                } 
+
                 // 假设是进攻某个地块（12，32）
                 String message = "{\"operation\":10011, \"coord\":1232}";
                 userLog.operation(message);
