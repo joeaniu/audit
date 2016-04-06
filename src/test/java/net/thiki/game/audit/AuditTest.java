@@ -73,7 +73,7 @@ public class AuditTest {
 
                 // 假设是进攻某个地块（12，32）
                 String message = "{\"operation\":10011, \"coord\":1232}";
-                userLog.operation(message);
+                userLog.operation(message);  
                 
                 verify(appender).saveOperation(userId, message);
                 
