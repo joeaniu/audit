@@ -6,18 +6,22 @@ package net.thiki.game.context;
  */
 public class UserContext {
 
-    private String userId;
-
+    private ThreadLocal<String> userId;
+    
+    public UserContext() {
+        userId = new ThreadLocal<>();
+    }
+    
     /**
      * 
      * @param userId
      */
     public void setUserId(String userId) {
-       this.userId = userId;
+       this.userId.set(userId);
     }
 
     public String getUserId() {
-        return userId;
+        return userId.get();
     }
 
 }
